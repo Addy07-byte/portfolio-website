@@ -1,6 +1,6 @@
 🌐 Portfolio Website - CI/CD on AWS
 
-This is my personal portfolio website hosted on AWS, built using HTML, CSS, and JavaScript, and deployed via a fully automated CI/CD pipeline using GitHub Actions.
+This is my personal portfolio website hosted on AWS, built using HTML, CSS, and deployed via a fully automated CI/CD pipeline using GitHub Actions.
 
 🚀 Live Website
 👉 [Visit My Portfolio] https://www-adityhede.com/index.html
