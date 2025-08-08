@@ -14,7 +14,7 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="projects.html" class="active">Projects</a>
-        <a href="contact.html">contact</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </header>
 
@@ -23,67 +23,40 @@
         <h1>Projects <span class="year-range">‘23 – Present</span></h1>
         <div class="projects-grid">
 
-          <!-- Project 1 -->
-          <!-- Project 1: AI Water Usage Estimator -->
+          <!-- Project Card Template -->
           <div class="project-card">
             <img src="ai-water-estimator.jpg" alt="AI Water Usage Estimator">
             <h3>AI Water Usage Estimator</h3>
             <p class="meta">2025 • <span>Python / Streamlit / OpenAI API</span></p>
-            <p>Interactive tool to estimate water consumption behind AI queries, promoting sustainable AI awareness. Built with Streamlit and deployed using GitHub + Streamlit.</p>
             <a href="https://github.com/Addy07-byte/ai-water-usage-estimator" target="_blank" class="cta-button">View on GitHub</a>
-            <button onclick="openModal('modal1')">More Info</button>
           </div>
 
-
-          <!-- Project 2 -->
-          <!-- Modal 2: CloudOps AI Monitoring -->
-          <div id="modal2" class="modal">
-            <div class="modal-content">
-              <span class="modal-close" onclick="closeModal('modal2')">&times;</span>
-              <h3>CloudOps AI Monitoring</h3>
-              <p>This project simulates real-world cloud monitoring by deploying an EC2 instance and using CloudWatch to collect logs and metrics. A custom Python-based AI model detects anomalies in system behavior and triggers alerts. Designed to showcase automated incident response in modern cloud environments.</p>
-              <a href="https://github.com/Addy07-byte/cloudops-ai-monitoring" target="_blank">GitHub Repository</a>
-            </div>
+          <div class="project-card">
+            <img src="employee analytics.jpg" alt="CloudOps AI Monitoring">
+            <h3>CloudOps AI Monitoring</h3>
+            <p class="meta">2025 • <span>Python / AWS / CloudWatch</span></p>
+            <a href="https://github.com/Addy07-byte/cloudops-ai-monitoring" target="_blank" class="cta-button">View on GitHub</a>
           </div>
 
-
-          <!-- Project 3 -->
           <div class="project-card">
             <img src="book recommendation.jpg" alt="Book Recommendation Website">
             <h3>Book Recommendation Website</h3>
             <p class="meta">2025 • <span>HTML / CSS / AWS S3</span></p>
-            <p>Static site hosted on AWS S3. Responsive layout built with HTML and CSS.</p>
-            <button onclick="openModal('modal3')">More Info</button>
+            <a href="https://github.com/Addy07-byte/book-recommendation-website" target="_blank" class="cta-button">View on GitHub</a>
           </div>
 
         </div>
       </section>
     </main>
 
-    <!-- Modal 1 -->
-    <div id="modal1" class="modal">
+    <!-- Reusable Modal -->
+    <div id="project-modal" class="modal">
       <div class="modal-content">
-        <span class="modal-close" onclick="closeModal('modal1')">&times;</span>
-        <h3>Cloud-Based Employee Directory</h3>
-        <p>Deployed a directory app in a secure VPC using EC2, IAM, and custom NACLs. Focused on reliability, security, and scalability using AWS architecture best practices.</p>
-      </div>
-    </div>
-
-    <!-- Modal 2 -->
-    <div id="modal2" class="modal">
-      <div class="modal-content">
-        <span class="modal-close" onclick="closeModal('modal2')">&times;</span>
-        <h3>Employee Analytics Dashboard</h3>
-        <p>Built a Tableau dashboard with Python backend to forecast employee attrition. Integrated classification models and data visualization for strategic decision-making.</p>
-      </div>
-    </div>
-
-    <!-- Modal 3 -->
-    <div id="modal3" class="modal">
-      <div class="modal-content">
-        <span class="modal-close" onclick="closeModal('modal3')">&times;</span>
-        <h3>Book Recommendation Website</h3>
-        <p>Created a personal book list website using HTML and CSS. Hosted on AWS S3 and optimized for performance and mobile responsiveness.</p>
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <h3 id="modal-title"></h3>
+        <img id="modal-image" src="" alt="Project Image">
+        <p id="modal-description"></p>
+        <a id="modal-link" href="" target="_blank" class="cta-button">View on GitHub</a>
       </div>
     </div>
 
@@ -95,20 +68,24 @@
   </div>
 
   <script>
-    function openModal(id) {
-      document.getElementById(id).style.display = 'flex';
+    function openModal(title, description, image, link) {
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-description').textContent = description;
+      document.getElementById('modal-image').src = image;
+      document.getElementById('modal-image').alt = title;
+      document.getElementById('modal-link').href = link;
+      document.getElementById('project-modal').style.display = 'flex';
     }
 
-    function closeModal(id) {
-      document.getElementById(id).style.display = 'none';
+    function closeModal() {
+      document.getElementById('project-modal').style.display = 'none';
     }
 
     window.onclick = function(event) {
-      document.querySelectorAll('.modal').forEach(modal => {
-        if (event.target === modal) {
-          modal.style.display = "none";
-        }
-      });
+      const modal = document.getElementById('project-modal');
+      if (event.target === modal) {
+        closeModal();
+      }
     };
   </script>
 </body>
