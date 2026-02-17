@@ -1,64 +1,78 @@
-🌐 Portfolio Website - CI/CD on AWS
 
-This is my personal portfolio website hosted on AWS, built using HTML, CSS, and deployed via a fully automated CI/CD pipeline using GitHub Actions.
+* ✅ GitHub Pages hosting
+* ✅ No custom domain
+* ✅ AWS experience preserved (as previous architecture)
+* ✅ Cost-aware engineering decision
+* ✅ Professional tone
 
-🚀 Live Website
-👉 [Visit My Portfolio] https://www-adityhede.com/index.html
-
----
-
-🛠️ Tech Stack
-
-- Frontend: HTML5, CSS3, JavaScript
-- Hosting:AWS S3 (static website hosting)
-- CDN & HTTPS: AWS CloudFront
-- Domain Management:AWS Route 53
-- CI/CD:GitHub Actions
-- Security: IAM-based access with GitHub Secrets
+You can copy-paste this directly into your repo.
 
 ---
 
-🔁 CI/CD Workflow
+# 🌐 Portfolio Website – Static Site with Automated Deployment
 
-Every time I push changes to the `main` branch, GitHub Actions:
-1. Uploads all files to my S3 bucket
-2. Invalidates CloudFront cache for `.html` pages
-3. Automatically updates my live website in minutes
+This repository contains my personal portfolio website built using HTML, CSS, and JavaScript.
 
-CI/CD File: `.github/workflows/deploy.yml`
+The site is currently deployed using **GitHub Pages** with automated deployment via **GitHub Actions**.
 
-```yaml
-on:
-  push:
-    branches: [ main ]
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
-      - run: aws s3 sync . s3://${{ secrets.S3_BUCKET_NAME }} --delete
-      - run: aws cloudfront create-invalidation \
-              --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
-              --paths "/*.html"
+🚀 **Live Website**
+👉 [https://addy07-byte.github.io/portfolio-website/](https://addy07-byte.github.io/portfolio-website/)
+
+---
+
+## 🛠️ Tech Stack
+
+**Frontend**
+
+* HTML5
+* CSS3
+* JavaScript
+
+**Hosting**
+
+* GitHub Pages
+
+**CI/CD**
+
+* GitHub Actions (auto-deploy on push to `main` branch)
+
+---
+
+## 🔁 Deployment Workflow
+
+Every time I push changes to the `main` branch:
+
+1. GitHub triggers a workflow
+2. The repository is built and deployed automatically
+3. The live website updates within minutes
+
+Deployment configuration:
+
+```
+.github/workflows/deploy.yml
 ```
 
----
-
-🧠 What I Learned
-
-- Configuring S3 buckets for static site hosting
-- Setting up HTTPS and CDN via CloudFront
-- Using Route 53 for domain routing
-- Writing secure IAM policies for CI/CD access
-- Automating deployment using GitHub Actions
+This ensures continuous integration and deployment without manual uploads.
 
 ---
-📁 Project Structure
+
+## 🧠 Architecture Evolution
+
+This portfolio was originally deployed on AWS using:
+
+* Amazon S3 (static hosting)
+* Amazon CloudFront (CDN + HTTPS)
+* Amazon Route 53 (DNS management)
+* IAM-secured GitHub Actions pipeline
+* Automated CloudFront cache invalidation
+
+It was later migrated to GitHub Pages to optimize infrastructure costs while maintaining automated deployment.
+
+This reflects a cost-aware design decision for a purely static website.
+
+---
+
+## 📁 Project Structure
 
 ```
 .
@@ -67,35 +81,48 @@ jobs:
 ├── contact.html
 ├── projects.html
 ├── style.css
-├── book recommendation.jpg
-├── aditya.jpg
-├── cloud.jpg
-├── employee analytics.jpg
-├── employee-directory.jpg
 ├── Resume.pdf
-└── .github
-    └── workflows
+└── .github/
+    └── workflows/
         └── deploy.yml
 ```
 
 ---
 
-📌 Future Improvements
+## 📌 Key Learnings
 
-- Auto-version CSS/JS files to avoid cache invalidation
-- Add visitor analytics (e.g., Plausible or CloudWatch)
-- Improve mobile responsiveness
-- 
----
-
-📜 License
-
-This project is open for learning and personal use. If you want to use this structure, please fork the repo and credit it appropriately.
+* Static site architecture design
+* CI/CD implementation using GitHub Actions
+* Secure secret management with GitHub Secrets
+* Cloud cost optimization decisions
+* Migration planning between hosting providers
 
 ---
 
-🙋‍♂️ Connect With Me
+## 📌 Future Improvements
 
-- 🌐 https://www-adityhede.com/index.html
-- 💼 [LinkedIn] https://www.linkedin.com/in/aditya-hede-1971211aa/
-- 💻 [GitHub] https://github.com/Addy07-byte
+* CSS/JS versioning for improved cache control
+* Performance optimization (Lighthouse improvements)
+* Accessibility enhancements
+* Lightweight analytics integration
+
+---
+
+## 📜 License
+
+Open for learning and reference. Please fork and credit if you reuse the structure.
+
+---
+
+## 🙋‍♂️ Connect With Me
+
+🌐 Live Site:
+[https://addy07-byte.github.io/portfolio-website/](https://addy07-byte.github.io/portfolio-website/)
+
+💼 LinkedIn:
+[https://www.linkedin.com/in/aditya-hede-1971211aa/](https://www.linkedin.com/in/aditya-hede-1971211aa/)
+
+💻 GitHub:
+[https://github.com/Addy07-byte](https://github.com/Addy07-byte)
+
+---
