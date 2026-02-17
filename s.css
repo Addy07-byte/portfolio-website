@@ -396,3 +396,36 @@ blockquote {
 .social-links a:hover {
   text-decoration: underline;
 }
+
+/* Project Thumbnail Placeholders */
+.project-thumb {
+  height: 140px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+/* Placeholder background colors */
+.placeholder-color1 { background: #0f4c81; }
+.placeholder-color2 { background: #2d6a4f; }
+.placeholder-color3 { background: #6b3e26; }
+
+/* Tech Badges */
+.tech-badges {
+  margin: 0.7rem 0;
+}
+
+.tech-badges span {
+  display: inline-block;
+  background: #222;
+  color: #fff;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin-right: 0.5rem;
+}
