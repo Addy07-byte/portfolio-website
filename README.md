@@ -1,14 +1,4 @@
 
-* ✅ GitHub Pages hosting
-* ✅ No custom domain
-* ✅ AWS experience preserved (as previous architecture)
-* ✅ Cost-aware engineering decision
-* ✅ Professional tone
-
-You can copy-paste this directly into your repo.
-
----
-
 # 🌐 Portfolio Website – Static Site with Automated Deployment
 
 This repository contains my personal portfolio website built using HTML, CSS, and JavaScript.
