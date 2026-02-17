@@ -20,85 +20,68 @@
 
     <main>
       <section class="projects-section">
-        <h1>Projects <span class="year-range">‘23 – Present</span></h1>
+        <h1>Projects <span class="year-range">’23 – Present</span></h1>
+
         <div class="projects-grid">
 
-          <!-- Project Card Template -->
+          <!-- Project 1 -->
           <div class="project-card">
-            <img class="static-preview" src="" alt="AI Water Usage Estimator">
-            <video class="animated-preview" autoplay loop muted>
-              <source src="ai-water-estimator-preview.webm" type="video/webm">
-              <source src="ai-water-estimator-preview.mp4" type="video/mp4">
-            </video>
+            <div class="project-thumb placeholder-color1">
+              <span>AI Water Usage Estimator</span>
+            </div>
             <h3>AI Water Usage Estimator</h3>
-            <p class="meta">2025 • <span>Python / Streamlit / OpenAI API</span></p>
-            <a href="https://github.com/Addy07-byte/ai-water-usage-estimator" target="_blank" class="cta-button">View on GitHub</a>
+            <p class="meta">2025 • Python / Streamlit / OpenAI API</p>
+            <p>
+              Built an interactive AI tool to estimate household water usage with insights and predictions in real time.
+            </p>
+            <div class="tech-badges">
+              <span>Python</span><span>AI</span><span>AWS</span><span>ML</span>
+            </div>
+            <a href="https://github.com/Addy07-byte/ai-water-usage-estimator" class="cta-button">View on GitHub</a>
           </div>
 
+          <!-- Project 2 -->
           <div class="project-card">
-            <img class="static-preview" src="" alt="CloudOps AI Monitoring">
-            <video class="animated-preview" autoplay loop muted>
-              <source src="cloudops-ai-monitoring-preview.webm" type="video/webm">
-              <source src="cloudops-ai-monitoring-preview.mp4" type="video/mp4">
-            </video>
+            <div class="project-thumb placeholder-color2">
+              <span>CloudOps AI Monitoring</span>
+            </div>
             <h3>CloudOps AI Monitoring</h3>
-            <p class="meta">2025 • <span>Python / AWS / CloudWatch</span></p>
-            <a href="https://github.com/Addy07-byte/cloudops-ai-monitoring" target="_blank" class="cta-button">View on GitHub</a>
+            <p class="meta">2025 • Python / AWS / CloudWatch</p>
+            <p>
+              Designed AI-assisted monitoring solutions that leverage logs and metrics to surface patterns and anomalies.
+            </p>
+            <div class="tech-badges">
+              <span>Python</span><span>AWS</span><span>Monitoring</span><span>CloudOps</span>
+            </div>
+            <a href="https://github.com/Addy07-byte/cloudops-ai-monitoring" class="cta-button">View on GitHub</a>
           </div>
 
+          <!-- Project 3 -->
           <div class="project-card">
-            <img class="static-preview" src="" alt="Book Recommendation Website">
-            <video class="animated-preview" autoplay loop muted>
-              <source src="book-recommendation-preview.webm" type="video/webm">
-              <source src="book-recommendation-preview.mp4" type="video/mp4">
-            </video>
+            <div class="project-thumb placeholder-color3">
+              <span>Book Recommendation Website</span>
+            </div>
             <h3>Book Recommendation Website</h3>
-            <p class="meta">2025 • <span>HTML / CSS / AWS S3</span></p>
-            <a href="https://github.com/Addy07-byte/book-recommendation-website" target="_blank" class="cta-button">View on GitHub</a>
+            <p class="meta">2025 • HTML / CSS / AWS S3</p>
+            <p>
+              Static site that provides personalized book recommendations with clean UI and AWS hosting setup.
+            </p>
+            <div class="tech-badges">
+              <span>HTML</span><span>CSS</span><span>AWS S3</span>
+            </div>
+            <a href="https://github.com/Addy07-byte/book-recommendation-website" class="cta-button">View on GitHub</a>
           </div>
 
         </div>
       </section>
     </main>
 
-    <!-- Reusable Modal -->
-    <div id="project-modal" class="modal">
-      <div class="modal-content">
-        <span class="modal-close" onclick="closeModal()">&times;</span>
-        <h3 id="modal-title"></h3>
-        <img id="modal-image" src="" alt="Project Image">
-        <p id="modal-description"></p>
-        <a id="modal-link" href="" target="_blank" class="cta-button">View on GitHub</a>
-      </div>
-    </div>
-
     <footer>
       <div class="footer-content">
-        © 2025 Aditya Hede | Cloud Portfolio
+        © 2025 Aditya Hede | AI & Cloud Portfolio
       </div>
     </footer>
+
   </div>
-
-  <script>
-    function openModal(title, description, image, link) {
-      document.getElementById('modal-title').textContent = title;
-      document.getElementById('modal-description').textContent = description;
-      document.getElementById('modal-image').src = image;
-      document.getElementById('modal-image').alt = title;
-      document.getElementById('modal-link').href = link;
-      document.getElementById('project-modal').style.display = 'flex';
-    }
-
-    function closeModal() {
-      document.getElementById('project-modal').style.display = 'none';
-    }
-
-    window.onclick = function(event) {
-      const modal = document.getElementById('project-modal');
-      if (event.target === modal) {
-        closeModal();
-      }
-    };
-  </script>
 </body>
 </html>
