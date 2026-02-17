@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Me</title>
+  <title>Contact Me | Aditya Hede</title>
   <link rel="stylesheet" href="s.css" />
   <link rel="stylesheet" href="contact.css" />
 </head>
+
 <body>
   <!-- Navigation -->
   <header>
@@ -25,10 +26,19 @@
     <p class="contact-intro">I'm open to work, freelance opportunities, and collaborations. Let's connect!</p>
 
     <div class="contact-container">
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea rows="5" placeholder="Your Message" required></textarea>
+      <!-- Formspree Form -->
+      <form
+        class="contact-form"
+        action="https://formspree.io/f/mojnwgwe"
+        method="POST"
+      >
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+        <!-- Optional -->
+        <input type="hidden" name="_subject" value="New message from Aditya's portfolio" />
+
         <button type="submit">Send Message</button>
       </form>
 
@@ -38,40 +48,10 @@
         <p><strong>Location:</strong> Phoenix, AZ</p>
         <div class="social-links">
           <a href="https://www.linkedin.com/in/aditya-hede-1971211aa/" target="_blank">LinkedIn</a>
-          <a href="https://github.com/Addy07-byte?tab=repositories" target="_blank">GitHub</a>
+          <a href="https://github.com/Addy07-byte" target="_blank">GitHub</a>
         </div>
       </div>
     </div>
   </section>
 </body>
 </html>
-<script>
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-
-  const data = {
-    name: this.name.value,
-    email: this.email.value,
-    message: this.message.value
-  };
-
-  try {
-    const response = await fetch("https://3d11i3rrq1.execute-api.us-east-1.amazonaws.com", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data)
-    });
-
-    if (response.ok) {
-      alert("Message sent successfully!");
-    } else {
-      alert("Error sending message.");
-    }
-  } catch (err) {
-    alert("Request failed.");
-    console.error(err);
-  }
-});
-</script>
